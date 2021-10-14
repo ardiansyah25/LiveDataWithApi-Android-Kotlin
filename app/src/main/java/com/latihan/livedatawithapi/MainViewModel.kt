@@ -30,7 +30,7 @@ class MainViewModel: ViewModel() {
     private fun findRestaurant(){
         _isLoading.value = true
         val client = ApiConfig.getApiService().getRestaurant(RESTAURANT_ID)
-        client.enqueue(object : Callback<RestaurantResponse> {
+        client.enqueue(object : retrofit2.Callback<RestaurantResponse> {
             override fun onResponse(
                     call: Call<RestaurantResponse>,
                     response: Response<RestaurantResponse>
